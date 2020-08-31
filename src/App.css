@@ -19,6 +19,10 @@ body {
   justify-content: space-between;
 }
 
+.app__left {
+  flex: 0.9;
+}
+
 @media (max-width: 900px) {
   .app {
     flex-direction: column;
