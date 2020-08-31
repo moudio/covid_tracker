@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   FormControl,
   Select,
@@ -14,6 +14,7 @@ import './App.css';
 
 function App() {
   const [countries, setCountries] = useState(['USA', 'Senegal', 'France']);
+  useEffect(() => {}, []);
   return (
     <div className="app">
       <div className="app__header">
