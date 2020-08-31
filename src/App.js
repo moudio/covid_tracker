@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FormControl, Select, MenuItem } from '@material-ui/core';
 import InfoBox from './InfoBox';
+import Map from './Map';
 import './App.css';
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         <InfoBox title="Recovered" total={3000} cases={1256} />
         <InfoBox title="Deaths" cases={3679} total={30} />
       </div>
+      <Map />
     </div>
   );
 }
