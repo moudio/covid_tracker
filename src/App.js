@@ -1,20 +1,24 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import {
-  FormControl,
-  Select,
-  option,
-  Button,
-  InputLabel,
-  Input,
-  FormHelperText,
-  MenuItem,
-} from '@material-ui/core';
+import axios from 'axios';
+import { FormControl, Select, MenuItem } from '@material-ui/core';
 import './App.css';
 
 function App() {
   const [countries, setCountries] = useState(['USA', 'Senegal', 'France']);
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const getCountriesData = async () => {
+      axios.get('https://disease.sh/v3/covid-19/countries').then((response) => {
+        const { data } = response;
+        const countries = data.map((country) => ({
+          name: country.country,
+          value: country.countryInfo.iso2,
+        }));
+        setCountries(countries);
+      });
+    };
+    getCountriesData();
+  }, []);
   return (
     <div className="app">
       <div className="app__header">
@@ -22,7 +26,7 @@ function App() {
         <FormControl className="app__dropdown">
           <Select variant="outlined" value="abc">
             {countries.map((country) => (
-              <MenuItem value={country}>{country}</MenuItem>
+              <MenuItem value={country.value}>{country.name}</MenuItem>
             ))}
           </Select>
         </FormControl>
