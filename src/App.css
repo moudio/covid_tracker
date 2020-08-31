@@ -4,3 +4,10 @@
   margin-bottom: 20px;
   align-items: center;
 }
+body {
+  background: #f5f6fa;
+}
+
+.app__stats {
+  display: flex;
+}

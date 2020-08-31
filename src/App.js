@@ -1,16 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import {
-  FormControl,
-  Select,
-  option,
-  Button,
-  InputLabel,
-  Input,
-  FormHelperText,
-  MenuItem,
-} from '@material-ui/core';
+import { FormControl, Select, MenuItem } from '@material-ui/core';
+import InfoBox from './InfoBox';
 import './App.css';
 
 function App() {
@@ -46,7 +38,11 @@ function App() {
           </Select>
         </FormControl>
       </div>
-      <div className="app_stats"></div>
+      <div className="app__stats">
+        <InfoBox title="Coronavirus cases" cases={123} total={2000} />
+        <InfoBox title="Recovered" total={3000} cases={1256} />
+        <InfoBox title="Deaths" cases={3679} total={30} />
+      </div>
     </div>
   );
 }
