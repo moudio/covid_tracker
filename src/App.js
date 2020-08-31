@@ -1,7 +1,13 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FormControl, Select, MenuItem } from '@material-ui/core';
+import {
+  FormControl,
+  Select,
+  MenuItem,
+  Card,
+  CardContent,
+} from '@material-ui/core';
 import InfoBox from './InfoBox';
 import Map from './Map';
 import './App.css';
@@ -27,8 +33,8 @@ function App() {
     setCountry(countryCode);
   };
   return (
-    <div className="app__left">
-      <div className="app">
+    <div className="app">
+      <div className="app__left">
         <div className="app__header">
           <h1>COVID 19 TRACKER</h1>
           <FormControl className="app__dropdown">
@@ -51,6 +57,12 @@ function App() {
         </div>
         <Map />
       </div>
+      <Card className="app__right">
+        <CardContent>
+          <h3>Live Cases By Country</h3>
+          <h3>Worldwide new Cases</h3>
+        </CardContent>
+      </Card>
     </div>
   );
 }
