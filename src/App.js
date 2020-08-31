@@ -17,6 +17,11 @@ function App() {
   const [country, setCountry] = useState('worldwide');
   const [countryInfo, setCountryInfo] = useState({});
   useEffect(() => {
+    fetch('https://disease.sh/v3/covid-19/all')
+      .then((response) => response.json())
+      .then((data) => setCountryInfo(data));
+  }, []);
+  useEffect(() => {
     const getCountriesData = async () => {
       axios.get('https://disease.sh/v3/covid-19/countries').then((response) => {
         const { data } = response;
