@@ -65,7 +65,7 @@ function App() {
           lat: data.countryInfo.lat,
           lng: data.countryInfo.long,
         });
-        setMapZoom(4);
+        setMapZoom(4.5);
       });
   };
 
