@@ -54,3 +54,6 @@ const casesTypeColors = {
     multiplier: 2000,
   },
 };
+
+export const prettyPrintStat = (stat) =>
+  stat ? `+${numeral(stat).format('0.0a')} ` : '';
