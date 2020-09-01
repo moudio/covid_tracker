@@ -2,7 +2,7 @@
 ![screenshot](./src/covid_screenshot.png)
 
 
-![screenshot](./src/covid_screenshot_2.jpg)
+![screenshot](./src/covid_screenshot_2.png)
 
 
 ## Technologies
