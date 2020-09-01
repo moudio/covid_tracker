@@ -18,6 +18,7 @@ import LineGraph from './LineGraph';
 import 'leaflet/dist/leaflet.css';
 function App() {
   const [countries, setCountries] = useState([]);
+  const [mapCountries, setMapCountries] = useState([]);
   const [country, setCountry] = useState('worldwide');
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
@@ -37,8 +38,10 @@ function App() {
           name: country.country,
           value: country.countryInfo.iso2,
         }));
+
         const sortedData = sortData(data);
         setTableData(sortedData);
+        setMapCountries(data);
         setCountries(countries);
       });
     };
@@ -101,7 +104,7 @@ function App() {
             total={countryInfo.deaths}
           />
         </div>
-        <Map center={mapCenter} zoom={mapZoom} />
+        <Map countries={mapCountries} center={mapCenter} zoom={mapZoom} />
       </div>
       <Card className="app__right">
         <CardContent>
