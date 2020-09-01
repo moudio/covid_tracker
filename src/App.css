@@ -29,6 +29,16 @@ body {
   }
 }
 
+@media (max-width: 500px) {
+  .app__header {
+    flex-direction: column;
+  }
+
+  .infoBox h2 {
+    font-size: 20px;
+  }
+}
+
 .app__header > h1 {
   color: white;
   background-color: black;
