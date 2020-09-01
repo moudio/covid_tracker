@@ -74,7 +74,7 @@ function App() {
     <div className="app">
       <div className="app__left">
         <div className="app__header">
-          <h1>COVID 19 TRACKER</h1>
+          <h1>COVID-19 TRACKER</h1>
           <FormControl className="app__dropdown">
             <Select
               variant="outlined"
@@ -82,26 +82,33 @@ function App() {
               onChange={onCountryChange}
             >
               <MenuItem value="worldwide">Worldwide</MenuItem>
-              {countries.map((country) => (
-                <MenuItem value={country.value}>{country.name}</MenuItem>
+              {countries.map((country, index) => (
+                <MenuItem key={index} value={country.value}>
+                  {country.name}
+                </MenuItem>
               ))}
             </Select>
           </FormControl>
         </div>
         <div className="app__stats">
           <InfoBox
+            isRed
+            active={casesType === 'cases'}
             onClick={(e) => setCasesType('cases')}
             title="Coronavirus cases"
             cases={prettyPrintStat(countryInfo.todayCases)}
             total={prettyPrintStat(countryInfo.cases)}
           />
           <InfoBox
+            active={casesType === 'recovered'}
             onClick={(e) => setCasesType('recovered')}
             title="Recovered"
             total={prettyPrintStat(countryInfo.recovered)}
             cases={prettyPrintStat(countryInfo.todayRecovered)}
           />
           <InfoBox
+            isRed
+            active={casesType === 'deaths'}
             onClick={(e) => setCasesType('deaths')}
             title="Deaths"
             cases={prettyPrintStat(countryInfo.todayDeaths)}

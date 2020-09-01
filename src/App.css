@@ -28,3 +28,23 @@ body {
     flex-direction: column;
   }
 }
+
+.app__header > h1 {
+  color: white;
+  background-color: black;
+}
+
+.app__dropdown {
+  background: white;
+}
+
+.app__right {
+  display: flex;
+  flex-direction: column;
+}
+
+.app__right .MuiCardContent-root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
