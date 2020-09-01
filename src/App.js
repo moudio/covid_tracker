@@ -1,16 +1,17 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import './Table.css';
 import {
   FormControl,
   Select,
   MenuItem,
   Card,
   CardContent,
-  Table,
 } from '@material-ui/core';
 import InfoBox from './InfoBox';
 import Map from './Map';
+import Table from './Table';
 import './App.css';
 
 function App() {
