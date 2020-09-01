@@ -15,12 +15,14 @@ import Table from './Table';
 import './App.css';
 import { sortData } from './util';
 import LineGraph from './LineGraph';
-
+import 'leaflet/dist/leaflet.css';
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('worldwide');
   const [countryInfo, setCountryInfo] = useState({});
   const [tableData, setTableData] = useState([]);
+  const [mapCenter, setMapCenter] = useState({ lat: 34.80736, lng: -40.4796 });
+  const [mapZoom, setMapZoop] = useState(3);
   useEffect(() => {
     fetch('https://disease.sh/v3/covid-19/all')
       .then((response) => response.json())
@@ -93,7 +95,7 @@ function App() {
             total={countryInfo.deaths}
           />
         </div>
-        <Map />
+        <Map center={mapCenter} zoom={mapZoom} />
       </div>
       <Card className="app__right">
         <CardContent>
