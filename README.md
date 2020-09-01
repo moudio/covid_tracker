@@ -1,8 +1,8 @@
 # Building a COVID-19 Tracker with React
-![screenshot](./src/Images/appointment_screenshot_one.jpg)
+![screenshot](./src/Images/covid_screenshot.png)
 
 
-![screenshot](./src/Images/appointment_screenshot_two.jpg)
+![screenshot](./src/Images/covid_screenshot_2.jpg)
 
 
 ## Technologies
